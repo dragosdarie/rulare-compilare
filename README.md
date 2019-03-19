@@ -1,11 +1,11 @@
 # rulare-compilare
 
-Componenta echipei:
-  SM: Darie Dragos
-      Maria Murariu
-      Melinte Marian-Daniel
-      Craciun Stefan
-      Raresh Ubermensch
-      Andrei Condurache
-      Alex Tinca
+Componenta echipei: <br/>
+  SM: Darie Dragos <br/>
+      Maria Murariu <br/>
+      Melinte Marian-Daniel <br/>
+      Craciun Stefan <br/>
+      Raresh Ubermensch <br/>
+      Andrei Condurache <br/> 
+      Alex Tinca <br/>
       
