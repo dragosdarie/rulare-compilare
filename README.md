@@ -5,7 +5,7 @@ Componenta echipei: <br/>
       Maria Murariu <br/>
       Melinte Marian-Daniel <br/>
       Craciun Stefan <br/>
-      Raresh Ubermensch <br/>
+      Raresh Neagu <br/>
       Andrei Condurache <br/> 
       Alex Tinca <br/>
       
