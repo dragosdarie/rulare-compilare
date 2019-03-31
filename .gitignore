@@ -1,5 +1,12 @@
 *.xml
+
 *.idea
+
 .idea
+
 *.iml
 
+*.out
+*.exe
+META-INF
+*.class
