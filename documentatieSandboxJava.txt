@@ -1,0 +1,3 @@
+dhttps://docstore.mik.ua/orelly/java-ent/security/ch01_02.html
+https://www.javaworld.com/article/2076742/building-a-bigger-sandbox.html
+https://www.javacodegeeks.com/2012/11/sandboxing-java-code.html
