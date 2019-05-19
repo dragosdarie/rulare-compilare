@@ -19,28 +19,23 @@ public class CompileRunC {
         if (filePath.endsWith(".cpp")) {
             fileInfo = new Utils.FileOutputInfo(fileName, FILETYPE.CPLUSPLUS);
             this.compileCPlusPlus(fileInfo, filePath);
-
-            if (fileInfo.Output.Errors.toString().equals(""))
-            {
-                fileInfo.Output.Output = new StringBuilder();
-                runFile(fileInfo, fileName);
-            }
-            else
-                return fileInfo;
         }
         else if (filePath.endsWith(".c")) {
             fileInfo = new Utils.FileOutputInfo(fileName, FILETYPE.C);
             this.compileC(fileInfo, filePath);
-
-            if (fileInfo.Output.Errors.toString().equals(""))
-            {
-                fileInfo.Output.Output = new StringBuilder();
-                runFile(fileInfo, fileName);
-            }
-            else
-                return fileInfo;
         }
+
+        fileInfo.Output.Output = new StringBuilder();
         return fileInfo;
+    }
+
+    public String runFile(String fileName, String input)
+    {
+        String runFileCommand = "cmd /C "+ FullOutputPath + fileName + " " + input;
+        Utils.OutputDetails output = RunCommand(runFileCommand);
+        System.out.println("RunFile: " +runFileCommand + "\n" + output.Errors + "\n"+ output.Output + "\nDone!");
+
+        return output.Output.toString();
     }
 
     private void compileC(Utils.FileOutputInfo fileInfo, String filePath) {
@@ -54,14 +49,6 @@ public class CompileRunC {
         String compileFileCommand = "cmd /C "+ MingwFolderPath + "g++.exe " + filePath + " -o "+ FullOutputPath + fileInfo.FileName;
         Utils.OutputDetails output = RunCommand(compileFileCommand);
         System.out.println("CompileCPlusPlus: " + compileFileCommand + "\n" + output.Errors + "\n" + output.Output);
-        fileInfo.Output = output;
-    }
-
-    private void runFile(Utils.FileOutputInfo fileInfo, String fileName)
-    {
-        String runFileCommand = "cmd /C "+ FullOutputPath + fileName;
-        Utils.OutputDetails output = RunCommand(runFileCommand);
-        System.out.println("RunFile: " +runFileCommand + "\n" + output.Errors + "\n"+ output.Output + "\nDone!");
         fileInfo.Output = output;
     }
 
