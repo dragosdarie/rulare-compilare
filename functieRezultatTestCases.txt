@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.HashMap;
+
+public  HashMap<Integer,Boolean> rezultateTestCaseuri (String name , HashMap<Integer,HashMap<String, String>> testCases) throws IOException{
+  
+  String path = "./Docker/" + name;
+  // Use relative path for Unix systems
+  File f = new File(path);
+
+  HashMap<Integer,Boolean> rezultat = new HashMap<Integer,Boolean>();
+  
+  f.getParentFile().mkdirs();
+  f.createNewFile();
+
+ // initializarePerechiIO();
+   
+        FileWriter fileWriter;
+        PrintWriter printWriter;
+        HashMap<String, String> variable = new HashMap<String , String>();
+     
+      for ( int i : testCases.keySet()){ 
+       
+         variable =testInput.get(i);    
+        
+        for(String j : variable.keySet()) {
+               fileWriter = new FileWriter(f);
+               printWriter = new PrintWriter(fileWriter);
+               System.out.println(j);
+               printWriter.print(j);
+               printWriter.close();  //punem in fisierul creat cheia hashmapului
+        
+               Process tempProcess = Runtime.getRuntime().exec("./sandbox.sh");
+               BufferedReader br = new BufferedReader(new FileReader("./Docker/sandbox/output.txt")); 
+               String st =  br.readLine();
+               br.close();
+               if(compareOutput(st,variable.get(j)) == true ) rezultat.put(i,true) ; 
+                   else rezultat.put(i,false);
+
+       }
+        
+       }
+
+   }
+
+
+public static boolean compareOutput(String s1, String s2)  {
+            return s1.trim().equals(s2.trim());
+         }
+ 
+}
