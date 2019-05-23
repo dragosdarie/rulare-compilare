@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/adaugaIntrebare.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="#" id="logo">LOGO</a>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="#">PROBLEME
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="problema.html">Clasa a IX-a</a>
+        <a href="problema.html">Clasa a X-a</a>
+        <a href="problema.html">Clasa a XI-a</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">RESURSE
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="ResurseIX.html">Clasa a IX-a</a>
+        <a href="ResurseX.html">Clasa a X-a</a>
+        <a href="ResurseXI.html">Clasa a XI-a</a>
+
+      </div>
+    </div>
+    <a href="adaugaIntrebare.html" id="logo">Adauga Problema</a>
+    <a href="paginaPrincipala.html" id="logo">My Account</a>
+    <a href="login.html" id="logo">Log Out</a>
+  </div>
+  
+  
+  <form method = "POST">
+    <br>
+    <h3>Aici o sa fie cerinta</h3><br>
+
+    <h3>Scrie solutie mai jos:</h3><br>
+    <textarea name="sol" cols="40" rows="20" required></textarea><br>
+    <button formaction = "getSolution_action" type="submit" class="register">Trimite
+    </button>
+  </form>
+  
+  
+</body>
+
+</html>
